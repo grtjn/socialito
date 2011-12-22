@@ -1,0 +1,33 @@
+Done:
+- encoding in tweets e.d.
+- tonen (twitter) account info
+- tonen tweets (gepagineerd, gecached)
+- tonen friends/followers met plaatjes
+- tonen mentions
+- tonen direct messages
+- sturen tweet, dm, retweet, mention
+- als je op follower/friend klikt: extra blok openen met (twitter) user info van die persoon
+- findpeople + results presenteren
+- opslag tweets en users (cache)
+- opslag direct messages, mentions + gepagineerd tonen
+- gui indeling opslaan
+- (un)block, (un)follow
+  . urls volgen (klikbaar met target=_blank?)
+- paginering van friends/followers/search results
+
+ToDo:
+- openen/tonen van tweet in apart widget met thumbs van afbeeldingen (?) en extra acties zoals:
+  . non-friend mentioned users followen!!
+  . afbeeldingen in blok tonen!
+  . iets met hashtags?
+- verwijderen widget ook verwijderen config  
+- na sturen tweet/dm/etc via ajax widgets updaten (werkt al deels)
+- search door opgeslagen tweets e.d.
+- tonen afbeeldingen in blok (entities en/of regex?)
+- tonen trending topics
+
+Extra:
+- gerelateerd nieuws (gebaseerd op trending topics)
+- tonen of juist filteren retweets (?)
+- gui look/feel/verplaatsingen opslaan, inclusief current page (en search results?)
+- geolocatie followers/friends (tonen met google map?)

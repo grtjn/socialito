@@ -1,0 +1,14 @@
+# Copyright 2010 28msec Inc.
+
+AddHandler fastcgi-script .exe
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+
+# rewrite empty URIs to the <start_page>START_PAGE</start_page> defined in sausalito.xml (or /index.html) and stop
+RewriteRule ^$|^/$ /main/init [R=302,L]
+
+# if the requested path does not match a file, rewrite the URI and execute the fcgi script
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /fcgi-bin/sausa_fcgi.exe [QSA,L]
+

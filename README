@@ -1,0 +1,59 @@
+SOCIAL(ito)
+
+About SOCIAL(ito)
+-----------------
+*What SOCIAL(ito) does*
+
+Socialito is a social media dashboard. 
+You will see all the information you need on one page. In order to help you get more out of your social messages and contacts, these will be retrieved and indexed in various ways. It will help you navigate and search through your data. It also helps you focus on people and topics that are important (to you). 
+
+The application does not store your social account credentials, but does preserve your information for your convenience, unless you Clear your data before you Log Out. You can easily rebuild your data anytime you'd like. 
+
+Currently, only Twitter accounts are supported. In the future however, we would like to help you get even "a little more" social by integrating other social networks like FaceBook, LinkedIn, etc. 
+
+SOCIAL(ito)'s
+-------------
+
+*Socialito was brought to you by*
+
+    * Ellen van Beijsterveldt: @EllnvB
+    * Geert Josten: @grtjn
+    * Maurice Schoenmakers: @marioese
+
+Under da hood
+-------------
+
+*Powered by*
+
+    * Backend:
+		* Sausalito (1.2.2)
+		* XQuery  
+    * Frontend:
+		*	HTML 5
+		*   CSS 3  
+		*   jQuery
+		*   jQuery Tag Cloud Plugin
+
+More on SOCIAL(ito)
+-------------------
+
+*The idea*
+
+We set off with the intention to write a real-life (with 'all the work') and catchy application. One of the trendy things at the moment, apart from lots of nice gadgets from Apple ;), are short message channels like Twitter. So we *had* to do something with that, obviously. But there is a lot more than just Twitter. That much more that it calls for something to manage all incoming information. That brought us to the idea of a social media dashboard. So, that is what we created. We had real ambitious plans, like integration of all kinds of channels (hopefully utilizing the Atom features from Sausalito), but we were realistic enough to start small: with integration of Twitter only. That proved more than enough, given the time we had till the contest dead-line. We intend to continue after the contest, though. It was also the intention to show off as much of Sausalitos/Zorbas capabilities as possible, but we got a bit distracted with getting things to work to keep full attention to this. We had to trade in some code quality due to this as well. 
+
+*The architecture*
+
+Like in any application, you could identify roughly three parts: front-end, middle-tier and data-layer. We more or less used MVC to separate these. We also tried to separate functional parts within the application and applied MVC to them separately, making the app more modular and thus increasing the reusability of each part. You will notice separate controllers/models/views for: sessions, accounts, twitter, and ui. Those are the main functional parts of application. In our approach: models stand on their own (just a few exceptions where one model depend on another), views only use models, and controllers can access both. That gave us separate controllers for distinct functionality, but we needed some glue to tie them together, and have one spot to manage the main application logic. You guess right, that is what the main controller does. You might also have noticed there are handlers for each of the controllers. They basically only translate HTTP requests to appropriate controller calls, and can be best seen as proxies/adapters for the controllers or as event handlers for the views, take your pick. ;) On the back-end we created several modules that have as little dependencies as possible. You will find some general HTML building functions, a util library, and one library that centralizes all knowledge of user-based data storage. Pity though that we discovered your article about XQuery design patterns ({http://www.balisage.net/Proceedings/vol5/html/Candillon01/BalisageVol5-Candillon01.html}) just a week ago, it could have useful we guess.. 
+
+*The code/coding*
+
+29 XQuery files, with a total of around 6500 lines of code, as well as quite a number of files in the public folder to enhance the front-end. We tried to use a consistent style, and keep things as clean as possible. Due adding of work-arounds to port between versions of Sausalito, this got a bit polluted, but we are still content with result. This is probably a good moment to mention that though we all three have XQuery experience, this was our first experience - ever - with both Sausalito and Zorba, as well as with the XQuery Update Facility and the Scripting Extensions. Despite some trouble deploying things, some other anomalies about which we emailed, and the fact we wanted to do a lot more, we are content and had lots of fun. We hope you like our application as much as we do.. Oh right, forgot to mention. We tried to utilize indexes, but it made all versions crash occasionally, at least locally. We haven't gotten around it to send you a report about it.. 
+
+*Wishlist*
+
+- search through cached tweets/messages/friends
+- search through twitter (other than findpeople)
+- ajaxify all calls from front-end (most notably: paging and opening of new widgets) 
+- and lots and lots more..
+
+(c) 2010 SOCIAL(ito) - Built with Sausalito - 100% XQuery 
